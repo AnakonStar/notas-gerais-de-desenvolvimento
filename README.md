@@ -9,7 +9,7 @@ Apenas um passo a passo de como estar pronto para rodar aplicações baseadas em
 
 1. [Instalação de dependências necessárias](#instalação-de-dependências-necessárias)
 
-2. [Criar um novo ambiente para rodar React Native em aparelho físico](#criar-um-novo-ambiente-para-rodar-react-native-em-aparelho-físico)
+2. [Criar um novo ambiente para rodar React Native em aparelho físico](#criar-um-novo-ambiente-para-rodar-react-native-em-aparelho-físico) (Nota para emulador)
    - [Configurar com Android Studio](#configurar-com-android-studio)
    - [Configurar com cmdline-tools](#configurar-com-cmdline-tools)
 
