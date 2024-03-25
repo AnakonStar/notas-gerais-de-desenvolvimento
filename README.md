@@ -234,6 +234,7 @@ List of devices attached
 
 ... online/device // Hash do IP do seu aparelho, juntamente com o estado dele, caso desconecte, irá aparecer como offline, mas manter ali
 ```
+> [!NOTE]
 > Com isso feito, apenas siga os passos comuns já citados, que tudo deverá rodar sem problemas e sem a necessidade de cabos conectados, apenas lembre-se que caso desligar a tela do celular, todo o processo terá de ser repetido, pois a porta muda sempre que o aparelho é desfocado, fazendo assim com que a porta determinada dentro deste comando, sejá inutilizada, irá aparecer como offline, mas manter ele na lista, caso queira que ele saia dali, rode o seguinte comando no cmd:
 ```
 $ adb disconnect seu_ip:porta_antiga
