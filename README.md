@@ -8,7 +8,6 @@ Apenas um passo a passo de como estar pronto para rodar aplicações baseadas em
 ## Sumário
 
 1. [Instalação de dependências necessárias](#instalação-de-dependências-necessárias)
-   - [Descrição dos passos para não ter que acessar o site oficial](#descrição-dos-passos-para-não-ter-que-acessar-o-site-oficial)
 
 2. [Criar um novo ambiente para rodar React Native em aparelho físico](#criar-um-novo-ambiente-para-rodar-react-native-em-aparelho-físico)
    - [Configurar com Android Studio](#configurar-com-android-studio)
@@ -78,6 +77,9 @@ Pronto, com isso feito, todas as dependências necessárias já foram instaladas
 
 ## Criar um novo ambiente para rodar React Native em aparelho físico
 
+> [!NOTE]
+> Caso opte por utilizar o emulador gerado pelo Android Studio, seguindo os passos em [Configurar com Android Studio](#configurar-com-android-studio), apenas abra o aplicativo que foi criado e acesse em "More Options" o item "AVD Manager", siga os passos de seleção do aparelho e pronto, apenas rode: ```npm run-android``` em seu projeto quando quiser que o emulador seja aberto automaticamente
+
 Realize todos os passos da seção 
 
 1. Vá no site do Android Studio e desça até a área de downloads;
@@ -86,40 +88,95 @@ Realize todos os passos da seção
 
 ### Configurar com Android Studio
 
+> [!TIP]
+> Acesse o site de configuração de ambiente do [React-Native](https://reactnative.dev/docs/environment-setup), abra a aba de ```React Native CLI Quickstart``` e siga os passos descritos
+
+### Descrição para não ter de acessar o site oficial
+
 1. Acesse os downloads do Android Studio e baixe a versão mais recente;
+   
+2. Abra o instalador e siga o padrão de todas as configurações que forem aparecendo
+
+3. Após isso uma tela de Boas Vindas será aberta, na aba Projects, clique no botão More Actions e selecione ```SDK Manager```
+
+4. Abra a aba de "SDK Platforms" e verifique se a caixa de Android SDK Platform 34 está marcada
+
+5. Abra também, a aba de "SDK Tools", marque a caixa de "Show Package Details", desça e procure por Android SDK Build-Tools e verifique se a versão selecionada é a última lançada (atualmente 34.0.0)
+
+6. Por fim, clique em "Apply" e espere a instalação finalizar
+
+7. Caso não tenha feito nenhuma alteração de onde o SDK seria instalado, abra o "Explorador de Arquivos" e na barra de pesquisa digite:
+
+```
+%LOCALAPPDATA%\Android\Sdk
+```
+
+Copie o caminho até a pasta do SDK
+
+8. Após isso, abra a barra de pesquisa do Windows e pesquise por "Variáveis de Ambiente"
+
+9. Quando abrir, clique no botão "Variáveis de Ambiente";
+
+10. Seja em sistema para geral ou usuário para mudar somente para o seu acesso, clique em Novo e digite as seguintes informações:
+
+Nome da variável: ANDROID_HOME
+
+Valor da variável: Cole o caminho para a pasta do SDK
+
+Devendo estar algo semelhante a isto:
+
+![image](https://github.com/AnakonStar/notas-gerais-de-desenvolvimento/assets/107694439/b0adece1-89be-4849-9e71-ee3cce2b5e25)
+
+Dessa forma, clique em "OK" e verifique se ela apareceu na tabela em que foi inserida
+
+11. Por fim, abra novamente o "Explorador de Arquivos" e digite na barra de pesquisa, caso também não tenha alterado a pasta da SDK, o seguinte comando:
+
+```
+%LOCALAPPDATA%\Android\Sdk\platform-tools
+```
+
+Copie o caminho até a pasta do SDK Platform-tools
+
+13. Abra novamente as "Váriáveis de Ambiente" caso tenha fechado, procure o item Path/PATH, clique nele e vá em Editar
+
+14. Clique na lateral em Novo e cole o caminho que você copiou para as platform-tools, clicando em "OK" assim que finalizar
+
+---
 
 ### Configurar com cmdline-tools
 
-3. Acesse os downloads do cmdline-tools e baixe a versão mais recente;
+1. Acesse os downloads do cmdline-tools e baixe a versão mais recente;
 
-4. Descompacte o zip/rar dentro um diretório de sua preferência;
+2. Descompacte o zip/rar dentro um diretório de sua preferência;
 
-5. Abra a pasta do cmdline-tools e acesse a pasta bin;
+3. Abra a pasta do cmdline-tools e acesse a pasta bin;
 
-6. Copie o caminho na barra de diretório do Explorador de Arquivos;
+4. Copie o caminho na barra de diretório do Explorador de Arquivos;
 
-7. Agora, abra a barra de pesquisa do Windows e pesquise por Variáveis de Ambiente;
+5. Agora, abra a barra de pesquisa do Windows e pesquise por "Variáveis de Ambiente";
 
-8. Quando abrir, clique no botão Variáveis de Ambiente;
+6. Quando abrir, clique no botão "Variáveis de Ambiente";
 
-9. Seja em sistema para geral ou usuário para mudar somente para o seu acesso, vá no item Path/PATH, clique nele e vá em Editar;
+7. Seja em sistema para geral ou usuário para mudar somente para o seu acesso, vá no item Path/PATH, clique nele e vá em Editar;
 
-10. Clique em Novo e cole o caminho para a pasta bin dentro de cmdline-tools;
+8. Clique em Novo e cole o caminho para a pasta bin dentro de cmdline-tools;
 
-11. Abra o terminal/cmd e digite: 
+9. Abra o terminal/cmd e digite: 
 ```
 $ sdkmanager --install "platforms;android-30" "build-tools;30.0.3" "platform-tools"
 ```
 > [!NOTE]
 > Caso de um erro dizendo que o arquivo sdkmanager, não está localizado dentro do diretório descrito no erro, va na pasta cmdline-tools, crie uma pasta com o nome de latest e coloque todos os arquivos além desta pasta, dentro; Por fim feche e tente rodar o install novamente.
 
-11. Antes de começar a baixar, irá perguntar se aceita os termos, digite "y" ou apenas aperte Return/Enter (não aceitar os termos, irá finalizar o processo e não instalar nada, processo esse que geralmente é demorado, melhor não rodar o comando e esquecer la);
+10. Antes de começar a baixar, irá perguntar se aceita os termos, digite "y" ou apenas aperte Return/Enter (não aceitar os termos, irá finalizar o processo e não instalar nada, processo esse que geralmente é demorado, melhor não rodar o comando e esquecer la);
 
-12. Com isso feito, irá ser gerado, alguns arquivos dentro de uma pasta chamada plataform-tools, da mesma forma que copiou o diretório de bin, copie o diretório desta pasta;
+11. Com isso feito, irá ser gerado, alguns arquivos dentro de uma pasta chamada plataform-tools, da mesma forma que copiou o diretório de bin, copie o diretório desta pasta;
 
-13. Acesse as Variáveis de Ambiente mais uma vez, acesse o mesmo Path/PATH que adicionou a pasta bin, clique em Novo e cole o diretório de plataform-tools, copiado;
+12. Acesse as "Variáveis de Ambiente" mais uma vez, acesse o mesmo Path/PATH que adicionou a pasta bin, clique em Novo e cole o diretório de plataform-tools e clique em "OK";
 
-14. Com tudo isso feito, seu ambiente já estará adequado para rodar um aplicativo React Native dentro de um aparelho físico, que esteja conectado na mesma rede/IP em que o projeto está rodando;
+---
+
+Com tudo isso feito, seu ambiente já estará adequado para rodar um aplicativo React Native dentro de um aparelho físico, que esteja conectado na mesma rede/IP em que o projeto está rodando;
 
 > [!TIP]
 > Caso deseje espelhar a tela do seu celular direto no computador, aconselho o uso do aplicativo Vysor, instale ele e faça todo o processo descrito em [Espelhar aparelho físico no computador](#espelhar-aparelho-físico-no-computador).
