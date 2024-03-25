@@ -1,6 +1,21 @@
 # Anotações gerais para arrumar problemas comuns e construir um ambiente de desenvolvimento
 
-Apenas um passo a passo de como estar pronto para rodar aplicações baseadas em 
+Apenas um passo a passo de como estar pronto para rodar aplicações baseadas em
+
+
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+## Sumário
+
+1. [Instalação de dependências necessárias](#instalação-de-dependências-necessárias)
+   - [Descrição dos passos para não ter que acessar o site oficial](#descrição-dos-passos-para-não-ter-que-acessar-o-site-oficial)
+
+2. [Criar um novo ambiente para rodar React Native em aparelho físico](#criar-um-novo-ambiente-para-rodar-react-native-em-aparelho-físico)
+   - [Configurar com Android Studio](#configurar-com-android-studio)
+   - [Configurar com cmdline-tools](#configurar-com-cmdline-tools)
+
+3. [Espelhar aparelho físico no computador](#espelhar-aparelho-físico-no-computador)
+   - [Rodar por meio da conexão Wi-Fi](#rodar-por-meio-da-conexão-wi-fi)
 
 ## Instalação de dependências necessárias
 
@@ -12,7 +27,7 @@ Primeiro de tudo serão necessárias algumas dependências para começar o desen
 
 ---
 
-### Descrição dos passos para não ter que acessar
+### Descrição dos passos para não ter que acessar o site oficial
 
 1. Abra o PowerShell do Windows como administrador (apenas pesquise por PowerShell na barra de pesquisa do Windows)
 
