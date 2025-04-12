@@ -163,12 +163,54 @@ Copie o caminho até a pasta do SDK Platform-tools
 
 9. Abra o terminal/cmd e digite: 
 ```
-$ sdkmanager --install "platforms;android-30" "build-tools;30.0.3" "platform-tools"
+$ sdkmanager --install "platforms;android-34" "build-tools;34.0.0" "platform-tools"
 ```
 > [!NOTE]
 > Caso de um erro dizendo que o arquivo sdkmanager, não está localizado dentro do diretório descrito no erro, va na pasta cmdline-tools, crie uma pasta com o nome de latest e coloque todos os arquivos além desta pasta, dentro; Por fim feche e tente rodar o install novamente.
 
 10. Antes de começar a baixar, irá perguntar se aceita os termos, digite "y" ou apenas aperte Return/Enter (não aceitar os termos, irá finalizar o processo e não instalar nada, processo esse que geralmente é demorado, melhor não rodar o comando e esquecer la);
+
+> [!NOTE]
+> Em ultimo caso, se o terminal travar na execução de qualquer comando sdkmanager, tente fazer os seguintes passos:
+
+---
+
+### Adicional para arrumar erros
+
+- Estrutura de Pastas Recomendada
+```
+root:\Android
+├── cmdline-tools
+│ └── latest
+│ └── bin
+├── platform-tools
+├── platforms
+├── build-tools\
+```
+
+- Rode o comando para setar as variaveis de ambiente ou simplemente acesse o terminal das variaveis
+
+```bat
+setx ANDROID_HOME "C:\Android"
+setx ANDROID_SDK_ROOT "C:\Android"
+setx PATH "%PATH%;C:\Android\cmdline-tools\latest\bin;C:\Android\platform-tools"
+```
+
+- Teste para ver se as variaveis estão corretas:
+```
+echo %ANDROID_HOME% // output: root:/Andorid
+```
+
+- Rode o comando para listar os packages do repo do sdkmanager:
+```
+sdkmanager --list
+```
+- Caso apareça normalmente a listagem e sem demora, é porque deu certo, agora pode rodar o comando para instalar os packages para uso:
+```
+$ sdkmanager --install "platforms;android-34" "build-tools;34.0.0" "platform-tools"
+```
+
+---
 
 11. Com isso feito, irá ser gerado, alguns arquivos dentro de uma pasta chamada plataform-tools, da mesma forma que copiou o diretório de bin, copie o diretório desta pasta;
 
